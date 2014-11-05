@@ -16,6 +16,21 @@ get "/" do
   erb :index
 end
 
+get "/signup" do
+  erb :signup
+end
+
+post "/signup" do
+  p params[:user]
+  @user = User.new(params[:user])
+  if @user.save
+    flash [:notice] = "Succesfully Created Profile"
+  else
+    flash [:flash] = "Please Try Again"
+  end
+  redirect "/"
+end
+
 post "/login" do
   @user = User.where(email: params[:email]).first
   if @user && @user.password == params[:password]

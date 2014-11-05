@@ -1,0 +1,35 @@
+<!DOCTYPE>
+<html>
+  <head>
+  </head>
+  <body>
+    <% if @user %>
+      <h1><%= @user.fname %></h1>
+    <% else %>
+      <h1>NOT LOGGED IN</h1>  
+    <% end %>
+
+    <% if flash[:notice] %>
+      <em><%= flash[:notice] %></em>  
+    <% end %>
+
+    <a href= "/signup">Sign Up Now!</a>
+
+    <form action="/login" method="POST">
+      
+      <input
+        type="email"
+        name="email"
+        placeholder="Email">
+
+      <input
+        type="password"
+        name="password"
+        placeholder="Password">
+
+      <input type="submit">
+
+    </form>
+
+  </body>
+</html>
