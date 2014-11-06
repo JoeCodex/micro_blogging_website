@@ -16,6 +16,15 @@ get "/" do
   erb :index
 end
 
+get "/logout" do
+  session[:user_id] = nil
+    redirect "/"
+end
+
+
+
+
+
 get "/signup" do
   erb :signup
 end
@@ -24,9 +33,9 @@ post "/signup" do
   p params[:user]
   @user = User.new(params[:user])
   if @user.save
-    flash [:notice] = "Succesfully Created Profile"
+    flash[:notice] = "Succesfully Created Profile"
   else
-    flash [:flash] = "Please Try Again"
+    flash[:notice] = "Please Try Again"
   end
   redirect "/"
 end
