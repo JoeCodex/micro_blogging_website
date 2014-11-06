@@ -12,17 +12,9 @@ get "/" do
   else
     @user = User.find(session[:user_id])
   end
-
+  @posts = Post.all
   erb :index
 end
-
-get "/logout" do
-  session[:user_id] = nil
-    redirect "/"
-end
-
-
-
 
 
 get "/signup" do
@@ -50,3 +42,25 @@ post "/login" do
   end
   redirect "/"
 end
+
+get "/logout" do
+  session[:user_id] = nil
+    redirect "/"
+end
+
+
+get "/post/new" do
+  erb :new_post
+end
+
+post "/post/new" do
+  @post = Post.new(text: params[:text],
+                   user_id: session[:user_id])
+  if @post.save
+    flash[:notice] = "Post has been added"
+  else
+    flash[:notice] = "Your post was not created, please review and resubmit."
+  end 
+  redirect "/"
+end
+

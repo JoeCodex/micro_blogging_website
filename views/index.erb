@@ -3,20 +3,31 @@
   <head>
   </head>
   <body>
+    
+    
+  <% if flash[:notice] %>
+     <em><%= flash[:notice] %></em>  
+  <% end %>
+
+  <a href= "/signup">Sign Up Now!</a>
+    
+
     <% if @user %>
       <h1><%= @user.email %></h1>
       <a href= "/logout">Log Out</a>
+      <a href="/post/new">Add New Post</a>
+
+      <% if @posts %>
+      <ul>
+        <% @posts.each do |post| %>
+        <li><%= "#{post.text}" %></li>
+        <% end %>
+      </ul>
+      <% end %>
+
     <% else %>
-      <h1>NOT LOGGED IN</h1>  
-    <% end %>
-
-    <% if flash[:notice] %>
-      <em><%= flash[:notice] %></em>  
-    <% end %>
-
-    <a href= "/signup">Sign Up Now!</a>
-
-    <form action="/login" method="POST">
+      <h1>NOT LOGGED IN</h1> 
+        <form action="/login" method="POST">
       
       <input
         type="email"
@@ -31,6 +42,10 @@
       <input type="submit">
 
     </form>
+ 
+    <% end %>
+
+
 
   </body>
 </html>
