@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141106211858) do
+ActiveRecord::Schema.define(version: 20141107161940) do
 
   create_table "followers", force: true do |t|
     t.integer "follower"
@@ -30,8 +30,11 @@ ActiveRecord::Schema.define(version: 20141106211858) do
   end
 
   create_table "users", force: true do |t|
-    t.string "email"
-    t.string "password"
+    t.string   "email"
+    t.string   "password"
+    t.string   "fname"
+    t.string   "lname"
+    t.datetime "bday"
   end
 
 end
