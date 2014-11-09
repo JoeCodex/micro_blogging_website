@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body { 
+    background-image: url(nature.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.back {
+    position: relative;
+    width: 100%;
+    background: #4682B4;
+    height: 60px;
+}
+.nav { 
+    background: #4682B4;
+    height: 60px;
+    width: 900px;
+    margin: 0 auto; position: relative;
+}
+.nav h1 {
+position: absolute;
+left: 15%;
+bottom: 3%;
+color: white;
+}
+
+.bottom_n {
+    min-height: 200px;
+    position: relative; bottom: 0;
+}
+
+.top_form {
+   float:right;
+   margin-right:10%;
+ padding-top:10px;
+}
+
+table td {
+   
+    color: white;
+}
+.login {
+    cursor: pointer;
+}
+.mid_container {
+    min-height: 600px;
+    width: 900px;
+    margin: 0 auto;
+}
+.left {
+    display: inline-block;
+    width: 55%;
+    min-height: 500px;
+    position: relative;
+}
+.lcontainer {
+position:absolute;
+width:80%;
+top: 5%;
+text-align: center;
+}
+.right {
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    width: 44%;
+    min-height: 500px;
+}
+.right_form {
+    position: absolute;
+    top: 5%;
+    width: 80%;
+    height: 300px;
+    vertical-align: middle;
+}
+h3 {
+margin-top: 10%;}
+.name {
+    width: 40%;
+    font-size:15px;
+    margin: 5px 0;
+}
+h1 {
+    padding-top: 20px;
+    padding-left: 8px;
+    padding-bottom: 10px;
+    color: black;
+}
+.cont {
+    display: inline-block;
+    background-color: white;
+    font-size: 15px;
+    width: 100%;
+    margin: 5px 0;
+}
+.signup_button {
+    background-color: white;
+    font-size:20px;
+    cursor: pointer;
+    padding: 7px 50px;
+    border-radius: 10px;
+}

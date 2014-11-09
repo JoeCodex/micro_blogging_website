@@ -1,51 +1,71 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
-  <head>
-  </head>
-  <body>
     
+    <head>
+        <title>Blog Website</title>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    </head>
     
-  <% if flash[:notice] %>
-     <em><%= flash[:notice] %></em>  
-  <% end %>
+    <body>
 
-  <a href= "/signup">Sign Up Now!</a>
-    
+        <div class="top_n back">
+            <div class="nav">
+            <h1>Blogfest</h1>
+                <form action="/post/login" method="POST" class="top_form">
+                    <table>
+                        <tr>
+                            <td>Email</td>
+                            <td>Password</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="email" name="email-address" placeholder="name@domain.com">
+                                </label>
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="password" maxlength="5" placeholder="*****" required/>
+                                </label>
+                            </td>
+                            <td>
+                                <label>
+                                    <input type="submit" name="login" value="Login" class="login" />
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <div class="mid_container">
+            <div class="left">
+            <div class="lcontainer">
+              <h1>Ideas need a great website</h1>
+              <h3>Welcome to the platform where you can blog your dreams into words... </h3>
+              </div>
+            </div>
+            <div class="right">
+                <div class="right_form">
+                     <h1>Sign Up</h1>
 
-    <% if @user %>
-      <h1><%= @user.email %></h1>
-      <a href= "/logout">Log Out</a>
-      <a href="/post/new">Add New Post</a>
+                    <form action="" method="post">
+                        <input type="text" placeholder="First Name" class="fname name">
+                        <input type="text" placeholder="Last Name" class="lname name">
+                        <br />
+                        <label>
+                            <input type="email" name="email-address" placeholder="name@domain.com" size="45" class="cont">
+                        </label>
+                        <label>
+                            <input type="password" maxlength="5" placeholder="*****" size="45" class="cont" required/>
+                        </label>
+                        <br />
+                        <input type="submit" name="login" value="Sign Up" class="signup_button">
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+    </body>
 
-      <% if @posts %>
-      <ul>
-        <% @posts.each do |post| %>
-        <li><%= "#{post.text}" %></li>
-        <% end %>
-      </ul>
-      <% end %>
-
-    <% else %>
-      <h1>NOT LOGGED IN</h1> 
-        <form action="/login" method="POST">
-      
-      <input
-        type="email"
-        name="email"
-        placeholder="Email">
-
-      <input
-        type="password"
-        name="password"
-        placeholder="Password">
-
-      <input type="submit">
-
-    </form>
- 
-    <% end %>
-
-
-
-  </body>
 </html>
