@@ -1,4 +1,4 @@
-require 'sinatra'
+ require 'sinatra'
 require 'sinatra/activerecord'
 require './models'
 require 'sinatra/flash'
@@ -64,3 +64,13 @@ post "/post/new" do
   redirect "/"
 end
 
+get "/profiles/new" do
+  erb :profiles
+end
+
+post "/profiles/new" do
+  @profile = Profile.new(text: params[:text],
+                        user_id: session[:user_id])
+  @profile.save
+    redirect "/profiles/new"
+end
