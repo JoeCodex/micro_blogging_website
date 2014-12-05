@@ -40,7 +40,7 @@ post "/login" do
   else
     flash[:notice] = "Invalid E-mail or Password. Please Try Again!"
   end
-  redirect "/"
+  redirect "/profiles/new"
 end
 
 get "/logout" do
@@ -54,6 +54,7 @@ get "/post/new" do
 end
 
 post "/post/new" do
+  p '++++++++++++++++++++'
   @post = Post.new(text: params[:text],
                    user_id: session[:user_id])
   if @post.save

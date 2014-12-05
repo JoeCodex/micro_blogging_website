@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="/stylesheet.css">
+</head>
+</html>
+<main>
+  <h1>All Posts</h1>
+  <ul>
+  <% @posts.each do |post| %>
+    <li class="post">
+      <a href=<%= "/user/#{ post.user_id }" %>>
+        <%= "#{ post.user.fname } #{ post.user.lname }" %>
+      </a>  says,
+      <p class="post-text"><%= post.text %></p>
+      <small><%= post.created_at %></small>
+
+      <% if @current_user && @current_user.id == post.user_id %>
+        <a class="delete-button"
+           href=<%= "/post/#{ post.id }/delete" %>>DELETE</a>
+      <% end %>
+    </li>
+  <% end %>
+  </ul>
+</main>

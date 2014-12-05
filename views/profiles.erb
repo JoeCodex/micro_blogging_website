@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>My Profile</title>
-	<link rel="stylesheet" type="text/css" href="profiles.css">
-</head>
-<body>
+	<head>
+		<title>My Profile</title>
+		<link rel="stylesheet" type="text/css" href="/stylesheet.css">
+	</head>
+	<body>
 
-<form action="/profiles/new" action="GET"> 
+		<div class="about">
+			<h1> About Me </h1>
+			<p>Break yo neck, yall tellivizzle dolizzle sit fo shizzle mah nizzle fo rizzle, mah home g-dizzle, daahng dawg adipiscing its fo rizzle. Nullizzle go to hizzle velit, izzle volutpizzle, suscipizzle quizzle, ghetto vizzle, ghetto. Sure eget tortizzle. Sed erizzle. Sheezy at dolizzle dapibus gangster tempizzle mofo. Maurizzle funky fresh go to hizzle et turpizzle. Fo izzle fo shizzle. Pellentesque you son of a bizzle rhoncus we gonna chung. In shizzlin dizzle habitasse platea dictumst. Fo shizzle dapibizzle. Curabitizzle tellus urna, pretizzle bizzle, mattizzle stuff, eleifend vitae, nunc. Check out this suscipizzle. Integer semper shit sizzle for sure.</p>
+		</div>
 
-<h1> About Me </h1>
-	<div class="about">
-	</div>
+		<div class="blog">
+			<h1> My Posts </h1>
+			<form action="/post/new" method="POST"> 
 
-
-
-
-<h1> My Posts </h1>
-	<div class="blog">
-	</div>
-
-
-
-</body>
+				<div class="comment">
+					<textarea rows="10" name="comment" id="comment" placeholder="Comment"></textarea>
+				</div>
+				<br>
+				<input Type="submit" VALUE="Share Your Thoughts!">
+			</form>
+		</div>
+	</body>
 </html>
